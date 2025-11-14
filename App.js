@@ -94,7 +94,10 @@ export default function App() {
         <Text style={styles.infoText}>Lat: {location.latitude.toFixed(6)}</Text>
         <Text style={styles.infoText}>Long: {location.longitude.toFixed(6)}</Text>
       </View>
-    
+       <TouchableOpacity style={styles.refreshButton} onPress={getLocation}>
+          <Text style={styles.buttonText}>🔄️ Actualizar</Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
@@ -146,5 +149,22 @@ const styles = StyleSheet.create({
     fontSize:17,
     color:"#000000",
     fontWeight: 600
+  },
+    refreshButton:{
+    position: 'absolute',
+    bottom: 40,
+    right: 20,
+    backgroundColor: '#b4dbffff',
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
+    elevation: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
